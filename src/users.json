@@ -1,0 +1,23 @@
+{
+  "admin@mergington.edu": {
+    "email": "admin@mergington.edu",
+    "password_hash": "$2b$12$yxa184SnsfjZEVVF78goMeQ0YYRbiIq0qa55hj3cTfry0Wm9SeiOq",
+    "role": "admin",
+    "first_name": "Admin",
+    "last_name": "User"
+  },
+  "faculty@mergington.edu": {
+    "email": "faculty@mergington.edu", 
+    "password_hash": "$2b$12$yxa184SnsfjZEVVF78goMeQ0YYRbiIq0qa55hj3cTfry0Wm9SeiOq",
+    "role": "faculty",
+    "first_name": "Faculty",
+    "last_name": "Member"
+  },
+  "student@mergington.edu": {
+    "email": "student@mergington.edu",
+    "password_hash": "$2b$12$yxa184SnsfjZEVVF78goMeQ0YYRbiIq0qa55hj3cTfry0Wm9SeiOq", 
+    "role": "student",
+    "first_name": "Test",
+    "last_name": "Student"
+  }
+}
