@@ -8,9 +8,50 @@
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div class="header-content">
+        <div class="header-title">
+          <h1>Mergington High School</h1>
+          <h2>Extracurricular Activities</h2>
+        </div>
+        <div class="header-auth">
+          <!-- Login section (when not authenticated) -->
+          <div id="login-section">
+            <button id="login-btn" class="auth-btn">Login</button>
+          </div>
+          <!-- User section (when authenticated) -->
+          <div id="user-section" class="hidden">
+            <span id="user-info"></span>
+            <button id="logout-btn" class="auth-btn">Logout</button>
+          </div>
+        </div>
+      </div>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Faculty/Admin Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required placeholder="your-email@mergington.edu" />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-message" class="message hidden"></div>
+        <div class="demo-credentials">
+          <h4>Demo Credentials:</h4>
+          <p><strong>Admin:</strong> admin@mergington.edu / password</p>
+          <p><strong>Faculty:</strong> faculty@mergington.edu / password</p>
+          <p><strong>Student:</strong> student@mergington.edu / password</p>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
@@ -21,12 +62,13 @@
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+      <section id="signup-container" class="hidden">
+        <h3>Manage Student Registration</h3>
+        <p class="access-note">Faculty and administrators can register/unregister students for activities.</p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <input type="email" id="email" required placeholder="student-email@mergington.edu" />
           </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
@@ -35,9 +77,16 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <div class="form-actions">
+            <button type="submit" name="action" value="signup">Sign Up Student</button>
+            <button type="button" id="unregister-btn" name="action" value="unregister">Unregister Student</button>
+          </div>
         </form>
         <div id="message" class="hidden"></div>
+      </section>
+
+      <section id="view-only-note" class="access-note">
+        <p>Students can view available activities. Only faculty and administrators can manage registrations.</p>
       </section>
     </main>
 
@@ -45,6 +94,6 @@
       <p>&copy; 2023 Mergington High School</p>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="app_auth.js"></script>
   </body>
 </html>
